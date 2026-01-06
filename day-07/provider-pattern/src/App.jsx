@@ -12,8 +12,6 @@ function App() {
 
   return (
     <Box>
-      <h1>Provider Pattern</h1>
-      <p>Authentication Context</p>
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
@@ -22,6 +20,7 @@ function App() {
           <UserLoginComponent />
         </Toolbar>
       </AppBar>
+      <h1>Provider Pattern</h1>
       <Box sx={{ mr: 2 }}>
         <p>{userData?.name}</p>
       </Box>
