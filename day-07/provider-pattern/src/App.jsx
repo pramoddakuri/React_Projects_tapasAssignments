@@ -1,34 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Box from '@mui/material/Box';
 import './App.css'
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import UserLoginComponent from './components/UserLoginComponent';
+import { useAuth } from './hook/useAuth';
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const { userData } = useAuth();
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Box>
+      <h1>Provider Pattern</h1>
+      <p>Authentication Context</p>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" sx={{ flexGrow: 1 }}>
+            Auth App
+          </Typography>
+          <UserLoginComponent />
+        </Toolbar>
+      </AppBar>
+      <Box sx={{ mr: 2 }}>
+        <p>{userData?.name}</p>
+      </Box>
+
+    </Box>
   )
 }
 
