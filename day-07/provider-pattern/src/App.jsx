@@ -5,10 +5,12 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import UserLoginComponent from './components/UserLoginComponent';
 import { useAuth } from './hook/useAuth';
+import { useLanguage } from './hook/useLanguage';
 
 function App() {
 
   const { userData } = useAuth();
+  const { language } = useLanguage();
 
   return (
     <Box>
@@ -21,8 +23,11 @@ function App() {
         </Toolbar>
       </AppBar>
       <h1>Provider Pattern</h1>
+      <p>User: admin, password: admin</p>
       <Box sx={{ mr: 2 }}>
-        <p>{userData?.name}</p>
+        <Box sx={{backgroundColor: 'red'}}>{userData?.name}</Box>
+        {language === 'english' && <p>English</p>}
+        {language === 'telugu' && <p>నమస్కారం</p>}
       </Box>
 
     </Box>

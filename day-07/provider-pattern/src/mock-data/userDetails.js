@@ -2,8 +2,8 @@ const userDetails = [
     {
         id: 1,
         name: "Admin User",
-        email: "admin@example.com",
-        password: "admin123!",
+        email: "admin",
+        password: "admin",
         role: "admin",
         privileges: ["create", "read", "update", "delete", "manage_users", "manage_roles"],
     },
